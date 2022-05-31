@@ -48,7 +48,7 @@ sysctl -p -f /etc/sysctl.d/70-disable-ipv6.conf
 
 # - Execulta instalador
 [[ -e install-sshplus ]] && rm install-sshplus
-wget https://raw.githubusercontent.com/alfainternet/SSHPLUS/main/sshplus/install-sshplus
+wget https://raw.githubusercontent.com/Noobproject/scripts/main/install-sshplus
 chmod +x install-sshplus
 [[ $(systemctl | grep -ic fuse) != '0' ]] && ./install-sshplus || ./install-sshplus --appimage-extract-and-run
 rm install-sshplus > /dev/null 2>&1
