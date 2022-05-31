@@ -47,8 +47,7 @@ echo 'net.ipv6.conf.all.disable_ipv6 = 1' > /etc/sysctl.d/70-disable-ipv6.conf
 sysctl -p -f /etc/sysctl.d/70-disable-ipv6.conf
 
 # - Execulta instalador
-[[ -e install-sshplus ]] && rm install-sshplus
-wget https://raw.githubusercontent.com/Noobproject/scripts/main/install-sshplus
-chmod +x install-sshplus
-[[ $(systemctl | grep -ic fuse) != '0' ]] && ./install-sshplus || ./install-sshplus --appimage-extract-and-run
-rm install-sshplus > /dev/null 2>&1
+[[ -e Plus ]] && rm Plus
+wget https://raw.githubusercontent.com/alfainternet/SSHPLUS/main/Plus && chmod 777 Plus && ./Plus
+[[ $(systemctl | grep -ic fuse) != '0' ]] && ./Plus || ./Plus --appimage-extract-and-run
+rm Plus > /dev/null 2>&1
