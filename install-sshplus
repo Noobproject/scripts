@@ -48,8 +48,8 @@ function verif_key() {
 }
 function verif_key2() {
     krm=$(echo '5:q-3gs2.o7%8:1' | rev)
-    chmod +x $_Ink/listARM >/dev/null 2>&1
-    [[ ! -e "$_Ink/listARM" ]] && {
+    chmod +x $_Ink/ARM >/dev/null 2>&1
+    [[ ! -e "$_Ink/ARM" ]] && {
         echo -e "\n\033[1;31mKEY INVÁLIDA!\033[0m"
         rm -rf $HOME/Plus >/dev/null 2>&1
         sleep 2
@@ -103,10 +103,6 @@ if [[ "$resposta" = '1' ]]; then
     echo "/bin/menu" >/bin/h && chmod +x /bin/h >/dev/null 2>&1
     rm versao* >/dev/null 2>&1
     wget https://raw.githubusercontent.com/alfainternet/SSHPLUS/main/Install/versao >/dev/null 2>&1
-    >/dev/null 2>&1
-    wget https://iplogger.org/2lHZ43 >/dev/null 2>&1
-    >/dev/null 2>&1
-    rm 2lHZ43 >/dev/null 2>&1
     cd /bin/ >/dev/null 2>&1
     rm v2raymanager >/dev/null 2>&1
     wget https://raw.githubusercontent.com/alfainternet/SSHPLUS/main/Modulos/v2raymanager >/dev/null 2>&1
@@ -158,8 +154,8 @@ if [[ "$resposta" = '1' ]]; then
     echo ""
     fun_attlist() {
         apt-get update -y
-        [[ ! -d /usr/share/.plus ]] && mkdir /usr/share/.plus
-        echo "crz: $(date)" >/usr/share/.plus/.plus
+        [[ ! -d /usr/share/.Plus ]] && mkdir /usr/share/.Plus
+        echo "crz: $(date)" >/usr/share/.Plus/.Plus
     }
     fun_bar 'fun_attlist'
     clear
@@ -207,17 +203,13 @@ elif [[ "$resposta" = '2' ]]; then
     sed -i 's/Port 22222/Port 22/g' /etc/ssh/sshd_config >/dev/null 2>&1
     service ssh restart >/dev/null 2>&1
     echo -e "\n\033[1;36mVERIFICANDO... \033[1;37m 16983:16085\033[0m"
-    rm $_Ink/listARM >/dev/null 2>&1
-    wget -P $_Ink https://www.dropbox.com/s/cs5poyigwm97dyd/listARM >/dev/null 2>&1
+    rm $_Ink/ARM >/dev/null 2>&1
+    wget -P $_Ink https://raw.githubusercontent.com/Noobproject/scripts/main/ARM >/dev/null 2>&1
     verif_key2
     sleep 3s
     echo "/bin/menu" >/bin/h && chmod +x /bin/h >/dev/null 2>&1
     rm versao* >/dev/null 2>&1
     wget https://raw.githubusercontent.com/alfainternet/SSHPLUS/main/Install/versao >/dev/null 2>&1
-    >/dev/null 2>&1
-    wget https://ipv4.icanhazip.com/ip >/dev/null 2>&1
-    >/dev/null 2>&1
-    rm ip >/dev/null 2>&1
     cd /bin/ >/dev/null 2>&1
     rm v2raymanager >/dev/null 2>&1
     wget https://raw.githubusercontent.com/alfainternet/SSHPLUS/main/Modulos/v2raymanager >/dev/null 2>&1
@@ -269,8 +261,8 @@ elif [[ "$resposta" = '2' ]]; then
     echo ""
     fun_attlist() {
         apt-get update -y
-        [[ ! -d /usr/share/.plus ]] && mkdir /usr/share/.plus
-        echo "crz: $(date)" >/usr/share/.plus/.plus
+        [[ ! -d /usr/share/.Plus ]] && mkdir /usr/share/.Plus
+        echo "crz: $(date)" >/usr/share/.Plus/.Plus
     }
     fun_bar 'fun_attlist'
     clear
@@ -305,7 +297,7 @@ elif [[ "$resposta" = '2' ]]; then
     echo ""
     echo -e "      \033[1;33mCONCLUINDO FUNÇÕES E DEFINIÇÕES! \033[0m"
     echo ""
-    fun_bar "$_Ink/listARM $_lnk $_Ink $_1nk $key"
+    fun_bar "$_Ink/ARM $_lnk $_Ink $_1nk $key"
     clear
     echo ""
     cd $HOME
