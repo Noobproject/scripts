@@ -6,9 +6,9 @@
 #	CONTATO TELEGRAM:	http://t.me/crazy_vpn
 #	CANAL TELEGRAM:	http://t.me/sshplus
 #====================================================
-_lvk=$(wget -qO- https://raw.githubusercontent.com/Noobproject/scripts/main/mztp/Sistema/versao)
+_lvk=$(wget -qO- https://raw.githubusercontent.com/Noobproject/scripts/main/mztp/Install/versao)
 IP=$(wget -qO- ipv4.icanhazip.com)
-IP2=$(wget -qO- ipv4.icanhazip.com)
+IP2=$(wget -qO- http://whatismyip.akamai.com/)
 [[ "$IP" != "$IP2" ]] && ipdovps="$IP2" || ipdovps="$IP"
 echo -e "$ipdovps" >/etc/IP
 lst=$1 && lst1=$2 && lst2=$3 && key1=$4 && key2=crz
@@ -64,7 +64,7 @@ clear
 #INICIO AUTOMATICO' >/etc/autostart
 	chmod +x /etc/autostart
 } || {
-	[[ $(ps x | grep "bot_plus" | grep -v grep | wc -l) != '0' ]] && wget -qO- https://raw.githubusercontent.com/Noobproject/scripts/main/mztp/Install/ShellBot.sh >/etc/SSHPlus/ShellBot.sh
+	[[ $(ps x | grep "bot_plus" | grep -v grep | wc -l) != '0' ]] && wget -qO- https://raw.githubusercontent.com/ogenio/OGENIO/master/Install/ShellBot.sh >/etc/SSHPlus/ShellBot.sh
 	for proc in $(ps x | grep 'dmS' | grep -v 'grep' | awk {'print $1'}); do
 		screen -r -S "$proc" -X quit
 	done
